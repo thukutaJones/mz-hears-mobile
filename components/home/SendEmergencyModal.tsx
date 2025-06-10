@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import CustomButton from "../CustomeButton";
 import AddPictureField from "../EmergencyCard/AddPictureField";
-import LocationField from "../EmergencyCard/LocationField";
 import TopBar from "../EmergencyCard/TopBar";
 import TypeField from "../EmergencyCard/TypeField";
 import PickerModal from "../PickerModal";
@@ -69,12 +68,6 @@ const SendEmergencyModal = ({
             <View className="w-full bg-white p-4 rounded-xl shadow-lg max-h-[95vh]">
               <TopBar handleClose={handleClose} />
               <View className="w-full mt-4">
-                <LocationField
-                  value={formValues?.location}
-                  handleSetLocation={(location: any) =>
-                    setFormValues({ ...formValues, location })
-                  }
-                />
                 <TypeField
                   title="Type of Emergency"
                   value={formValues?.emergencyType}
