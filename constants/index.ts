@@ -1,4 +1,5 @@
 import email from "@/assets/icons/email.png";
+import emergency from "@/assets/icons/emergency.png";
 import home from "@/assets/icons/home.png";
 import location from "@/assets/icons/location.png";
 import lock from "@/assets/icons/lock.png";
@@ -6,6 +7,7 @@ import out from "@/assets/icons/out.png";
 import person from "@/assets/icons/person.png";
 import profile from "@/assets/icons/profile.png";
 import search from "@/assets/icons/search.png";
+import service from "@/assets/icons/service.png";
 import facility from "@/assets/images/facility.png";
 import masmLogo from "@/assets/images/masm.png";
 import noResult from "@/assets/images/no-result.png";
@@ -37,6 +39,8 @@ export const icons = {
   out,
   search,
   location,
+  emergency,
+  service,
 };
 
 export const onboarding = [

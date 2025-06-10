@@ -9,7 +9,7 @@ const TopBar = ({ handleClose }: { handleClose: () => void }) => {
       <View className="flex flex-row items-center justify-between mb-4">
         <Text className="text-lg font-semibold text-black">Send Emergency</Text>
         <TouchableOpacity
-          className="p-2 bg-red-100 rounded-full"
+          className="p-2 bg-red-50 rounded-full"
           onPress={handleClose}
         >
           <MaterialCommunityIcons name="close-thick" size={18} color="red" />

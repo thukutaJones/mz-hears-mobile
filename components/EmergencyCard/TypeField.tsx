@@ -1,4 +1,3 @@
-import { icons } from "@/constants";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
@@ -6,13 +5,14 @@ const TypeField = ({
   handleOpenTypeofEmergeny,
   value,
   title,
-  placeHolder
-
+  placeHolder,
+  icon,
 }: {
   handleOpenTypeofEmergeny: any;
   value: any;
   title: string;
   placeHolder?: boolean;
+  icon: any;
 }) => {
   return (
     <View className="my-2 w-full">
@@ -20,14 +20,16 @@ const TypeField = ({
       <View
         className={`flex flex-row justify-start items-center relative bg-neutral-100 rounded-full border border-neutral-100 focus:border-primary-500`}
       >
-        <Image source={icons.location} className={`w-6 h-6 ml-4`} />
+        <Image source={icon} className={`w-6 h-6 ml-4`} />
         <TouchableOpacity
           onPress={handleOpenTypeofEmergeny}
           className={`rounded-full p-4 font-JakartaSemiBold text-[15px] flex-1 text-left`}
         >
           <Text
-          numberOfLines={1}
-            className={`${value?.name ? "text-black" : "text-gray-500 italic"} overflow-clip`}
+            numberOfLines={1}
+            className={`${
+              value?.name ? "text-black" : "text-gray-500 italic"
+            } overflow-clip`}
           >
             {value?.name ? `${value?.name}` : placeHolder || title}
           </Text>

@@ -1,3 +1,4 @@
+import { icons } from "@/constants";
 import React, { useState } from "react";
 import {
   Modal,
@@ -74,6 +75,7 @@ const SendEmergencyModal = ({
                   handleOpenTypeofEmergeny={() =>
                     setToggle({ ...toggle, typeOfEmergency: true })
                   }
+                  icon={icons?.emergency}
                 />
                 <TypeField
                   title="Type of Service"
@@ -81,6 +83,7 @@ const SendEmergencyModal = ({
                   handleOpenTypeofEmergeny={() =>
                     setToggle({ ...toggle, typeOfService: true })
                   }
+                  icon={icons?.service}
                 />
                 <Text className={`text-sm font-JakartaSemiBold mb-1 my-2`}>
                   Add Pictures (Optional)
