@@ -5,6 +5,7 @@ import location from "@/assets/icons/location.png";
 import lock from "@/assets/icons/lock.png";
 import out from "@/assets/icons/out.png";
 import person from "@/assets/icons/person.png";
+import phone from "@/assets/icons/phone.png";
 import profile from "@/assets/icons/profile.png";
 import search from "@/assets/icons/search.png";
 import service from "@/assets/icons/service.png";
@@ -41,6 +42,7 @@ export const icons = {
   location,
   emergency,
   service,
+  phone,
 };
 
 export const onboarding = [
@@ -77,6 +79,6 @@ export const facilityIcons = [
   { name: "Responders", icon: "people-alt" },
 ];
 
-export const baseUrl = "http://192.168.151.156:7000"
+export const baseUrl = "http://192.168.151.156:7000";
 
 export const emergencyFormFields = [{ label: "Location" }];

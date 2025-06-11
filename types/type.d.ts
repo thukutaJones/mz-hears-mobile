@@ -1,6 +1,5 @@
 import { TextInputProps, TouchableOpacityProps } from "react-native";
 
-
 declare interface MapProps {
   destinationLatitude?: number;
   destinationLongitude?: number;
@@ -16,6 +15,7 @@ declare interface ButtonProps extends TouchableOpacityProps {
   IconLeft?: React.ComponentType<any>;
   IconRight?: React.ComponentType<any>;
   className?: string;
+  isLoading?: boolean;
 }
 
 declare interface InputFieldProps extends TextInputProps {
@@ -28,7 +28,6 @@ declare interface InputFieldProps extends TextInputProps {
   iconStyle?: string;
   className?: string;
 }
-
 
 declare interface LocationStore {
   userLatitude: number | null;

@@ -5,7 +5,13 @@ import "core-js/stable/atob";
 import { jwtDecode } from "jwt-decode";
 import { userDataContext } from "./userDataContext";
 
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 interface LogInContextType {
   route: string;
@@ -37,26 +43,26 @@ const LogInContextProvider = ({ children }: { children: ReactNode }) => {
         if (token) {
           setToken(token);
 
-          const decodedToken: any = jwtDecode(token);
-          const userId = decodedToken?.userId;
+          const decodedToken: any = await jwtDecode(token);
+          const userId = decodedToken?.id;
+          console.log(decodedToken)
 
           if (userId) {
-            const res = await axios.get(`${baseUrl}/api/user/${userId}`, {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            });
+            const res = await axios.get(
+              `${baseUrl}/api/v1/user/user/${userId}`,
+              {
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              }
+            );
 
             const user = res?.data?.user;
+            console.log(user)
 
-            if (user?.userName) {
+            if (user?.fullName) {
               setUserData(user);
-
-              setRoute(
-                user.role === "Admin"
-                  ? "/(root)/(admin)/adminDashboard"
-                  : "/(root)/(user)/home"
-              );
+              setRoute("/(root)/home");
             } else {
               setRoute("/(auth)/welcome");
             }
