@@ -58,7 +58,7 @@ const SendEmergencyModal = ({
     >
       <TouchableOpacity
         className="flex-1 items-center justify-center"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
         onPress={handleClose}
       >
         <Pressable className="w-full p-4">

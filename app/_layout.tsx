@@ -6,6 +6,9 @@ import { useEffect } from "react";
 import Toast from "react-native-toast-message";
 import "../global.css";
 
+import LognInContextProvider from "../context/checkLogIn";
+import GlobalContextProvider from "../context/userDataContext";
+
 SplashScreen.preventAutoHideAsync();
 
 const Layout = () => {
@@ -29,14 +32,16 @@ const Layout = () => {
     return null;
   }
   return (
-    <>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-        <Stack.Screen name="(root)" options={{ headerShown: false }} />
-      </Stack>
-      <Toast config={toastConfig} />
-    </>
+    <GlobalContextProvider>
+      <LognInContextProvider>
+        <Stack>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+          <Stack.Screen name="(root)" options={{ headerShown: false }} />
+        </Stack>
+        <Toast config={toastConfig} />
+      </LognInContextProvider>
+    </GlobalContextProvider>
   );
 };
 

@@ -77,4 +77,6 @@ export const facilityIcons = [
   { name: "Responders", icon: "people-alt" },
 ];
 
+export const baseUrl = "http://192.168.151.156:7000"
+
 export const emergencyFormFields = [{ label: "Location" }];
