@@ -1,8 +1,11 @@
 import { icons, images } from "@/constants";
+import { userDataContext } from "@/context/userDataContext";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
 const HomeTopBar = () => {
+    const { userData } = userDataContext();
+  
   return (
     <View className="flex flex-row items-center justify-between">
       <View className="flex flex-row gap-1 items-center">
@@ -11,8 +14,8 @@ const HomeTopBar = () => {
           className="h-12 w-12 rounded-lg"
         />
         <View>
-          <Text className="text-gray-500 text-xs">Moth Jones</Text>
-          <Text className="text-green-600 text-sm">Masm member</Text>
+          <Text className="text-gray-500 text-xs">{userData?.fullName}</Text>
+          <Text className="text-red-600 text-sm">Non member</Text>
         </View>
       </View>
       <TouchableOpacity
